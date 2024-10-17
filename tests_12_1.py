@@ -14,7 +14,6 @@ class RunnerTest(unittest.TestCase):
             walk_1.walk()
         self.assertEqual(walk_1.distance, 50)
 
-
     def test_run(self):
         run_1 = runner.Runner("Peter")
         for i in range(10):

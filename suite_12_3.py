@@ -3,9 +3,11 @@
 #
 # Задача "Заморозка кейсов":
 import unittest
+import tests_12_1
 import tests_12_2
 
 tourTS = unittest.TestSuite()
 tourTS.addTest(unittest.TestLoader().loadTestsFromTestCase(tests_12_2.TournamentTest))
-
-runner = unittest.TextTestRunner()
+tourTS.addTest(unittest.TestLoader().loadTestsFromTestCase(tests_12_1.RunnerTest))
+runner = unittest.TextTestRunner(verbosity=4)
+runner.run(tourTS)

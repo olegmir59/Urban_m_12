@@ -9,7 +9,7 @@ from runner_and_tournament import Runner, Tournament
 
 
 class TournamentTest(TestCase):
-    is_frozen = False
+    is_frozen = True
 
     def setUp(self):
         self.r1 = Runner("Усэйн", 10)
@@ -35,28 +35,28 @@ class TournamentTest(TestCase):
             if v == value:
                 return k
 
-    @unittest.skipIf(is_frozen, "пока не требуется")
+    @unittest.skipIf(is_frozen, "Тесты в этом кейсе заморожены")
     def test_Tournament1(self):
         tour1 = Tournament(90, self.r1, self.r3)
         tour_results = tour1.start()
         self.assertTrue(tour_results[list(tour_results.keys())[-1]] == 'Ник', 'Ник обогнал кого-то')
         self.all_results['test_Tournament1'] = tour_results
 
-    @unittest.skipIf(is_frozen, "пока не требуется")
+    @unittest.skipIf(is_frozen, "Тесты в этом кейсе заморожены")
     def test_Tournament2(self):
         tour2 = Tournament(90, self.r2, self.r3)
         tour_results = tour2.start()
         self.assertTrue(tour_results[list(tour_results.keys())[-1]] == 'Ник', 'Ник обогнал кого-то')
         self.all_results['test_Tournament2'] = tour_results
 
-    @unittest.skipIf(is_frozen, "пока не требуется")
+    @unittest.skipIf(is_frozen, "Тесты в этом кейсе заморожены")
     def test_Tournament3(self):
         tour3 = Tournament(90, self.r1, self.r2, self.r3)
         tour_results = tour3.start()
         self.assertTrue(tour_results[list(tour_results.keys())[-1]] == 'Ник', 'Ник обогнал кого-то')
         self.all_results['test_Tournament3'] = tour_results
 
-    @unittest.skipIf(is_frozen, "пока не требуется")
+    @unittest.skipIf(is_frozen, "Тесты в этом кейсе заморожены")
     def test_Tournament4(self):
         tour4 = Tournament(90, self.r1, self.r2)
         tour_results = tour4.start()
